@@ -1,0 +1,9 @@
+Weak blacklist: block only keywords (getattr, __import__, os, popen, etc.)
+
+Medium blacklist: block keywords + chr(), so dynamic string building via ASCII is prevented
+
+Strong blacklist: block keywords + chr() + Unicode escapes, forcing attackers to chain indirect built-in access,
+                  like introspection through 
+                  __builtins__.__dict__
+                  object.__subclasses__(), etc.
+                  globals()

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>No blacklist implemented!</h1>
+
+    <h2>Vulnerable Calculator (using the eval function)</h2>
+    <p>Try typing <strong>getattr(__import__('os'), 'popen')('dir').read()</strong> in the field below</p>
+    <form action="/no_blacklist.html" method="POST">
+        <input name="no_blacklist_eval_input" placeholder="Enter input">
+        <input type="submit" value="Calculate">
+    </form>
+
+    <h3>Output:</h3>
+    <p>{{ eval_result }}</p>
+
+    <h2>Vulnerable Calculator (using the exec function)</h2>
+    <p>Try typing print(1+1)</p>
+    <form action="/no_blacklist.html" method="POST">
+        <input name="no_blacklist_exec_input" placeholder="Enter input">
+        <input type="submit" value="Calculate">
+    </form>
+
+    <h3>Output:</h3>
+    <p>{{ exec_result }}</p>
+
+    <a href="/"><button>Back to main page</button></a>
+</body>
+</html>

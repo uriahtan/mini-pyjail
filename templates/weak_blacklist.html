@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Weak blacklist implemented!</h1>
+    <h1>Keywords blocked include os,</h1>
+    
+    <h2>Vulnerable Calculator (using the eval function)</h2>
+    <p>Try typing 1+1</p>
+    <form action="/weak_blacklist.html" method="POST">
+        <input name="weak_blacklist_eval_input" placeholder="Enter input">
+        <input type="submit" value="Calculate">
+    </form>
+    <pre>{eval_result}</pre>
+
+    <h2>Vulnerable Calculator (using the exec function)</h2>
+    <p>Try typing print(1+1)</p>
+    <form action="/weak_blacklist.html" method="POST">
+        <input name="weak_blacklist_exec_input" placeholder="Enter input">
+        <input type="submit" value="Calculate">
+    </form>
+    <pre>{exec_result}</pre>
+</body>
+</html>

